@@ -1,0 +1,19 @@
+Linear:
+    * Starts at the beginning, goes through each one
+    * O(n)
+
+Binary:
+    * Starts in middle, bigger or smaller?
+    * O(log n)
+
+Selection Sort:
+    * Go through entire list, take note of lowest... swap the 2 numbers. repeat until sorted.
+    * O(n^2)
+
+Bubble Sort:
+    * Go through list.. look at 2 num at a time. Swap those 2 num to be right.
+    * O(n^2)
+
+Merge Sort:
+    * Sort left half, sort right half, merge into new array from left of each section.
+    * O(n log n)

@@ -1,0 +1,8 @@
+bit: binary-digit. 8 bits in a byte
+binary: 1's and 0's. Also called base-2. 1 is on, 0 is off. What is actually on or off is the transistor, which computers have thousands of.
+     A: 65.. (01000001) B:66.. C: 67...      0   0  0 0  0 0 0 0
+     The digits are counted as:             128,64,32,16,8,4,2,1
+RGB: With colors, the same numbers that can mean 'hi!' (72, 73, 33) instead mean medium red, medium green, a little blue
+ASCII: American Standard Code for Information Interchange
+
+#a function takes an argument to produce a side effect. Example: print("hello"). funct, print. Arguement, "hello". Side effect, "hello" is printed.

@@ -1,0 +1,81 @@
+COMPILING
+------------
+Make:
+    *For C, to run a program we run 'make hello', './hello'
+    *'make' is a command that uses the compiler 'clang' (compiler: source code --> machine code)
+    *'make hello' == 'clang -o hello hello.c -lcs50'
+
+Compiling steps:
+    *Preproccessing. (libraries in 'usr/include' folder)
+    *Compiling. Source code --> assembly language
+        -'Assembly Language' is code closer to machine code. Some people learn it.
+    *Assembling. Assembly language --> 0's and 1's.
+    *Linking. Takes allllll the 0's and 1's (hello.c, cs50.c, stdio.c) and links them together.
+
+ARRAYS
+------------
+Definition:
+    *An array is a collection of items or data, stored continuously in a databasae (Ex, lists)
+
+Strings:
+    *Strings are actually just arrays of characters
+    *At the end of each string is a 'null' character or '0' character
+
+    *To get the length of a string (since 'len' function doesn't exist):
+        int main(void)
+        {
+            // Prompt for user's name
+            string name = get_string("Name: ");
+
+            // Count number of characters up until '\0' (aka NUL)
+            int n = 0;
+            while (name[n] != '\0')
+            {
+                n++;
+            }
+            printf("%i\n", n);
+        }
+    *orrr use libraries like string.h ('strlen')
+
+    *Uppercase and Lowercase letters are 32 digits away (a == 97, A == 65)
+        #include <cs50.h>
+        #include <stdio.h>
+        #include <string.h>
+
+        int main(void)
+        {
+            string s = get_string("Before: ");
+            printf("After:  ");
+            for (int i = 0, n = strlen(s); i < n; i++)
+            {
+                if (s[i] >= 'a' && s[i] <= 'z')
+                {
+                    printf("%c", s[i] - 32);
+                }
+                else
+                {
+                    printf("%c", s[i]);
+                }
+            }
+            printf("\n");
+        }
+    *Orrrr ctype.h library.('isupper', 'tolower')
+COMMAND LINE ARGUMENTS
+------------------------
+    *Use:
+    #include <cs50.h>
+    #include <stdio.h>
+
+    int main(int argc, string argv[])
+    {
+        if (argc == 2)
+        {
+            printf("hello, %s\n", argv[1]);
+        }
+        else
+        {
+            printf("hello, world\n");
+        }
+    }
+
+    *To see exit code.. 'echo$?'

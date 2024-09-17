@@ -1,0 +1,172 @@
+
+!!!!!!!!!!!!!!!!
+IF YOU'RE CONFUSED ABOUT POINTERS WATCH THIS: https://www.youtube.com/watch?v=5VnDaHBi8dM
+!!!!!!!!!!!!!!!!
+
+
+Hexadecimal:
+    Used to shoe colors (RGB)
+    Numbers 1-9, letters a-f
+
+Pointers:
+    a variable the contains the address of where something is stored in comp mem
+
+    for:
+        #include <stdio.h>
+
+        int main(void)
+        {
+            int n = 50;
+            int *p = &n;
+            printf("%i\n", *p);
+        }
+    the int * means that p is a special type of int. Its assigning p to be the address (&) of n
+    later, *p is calling the pointer
+
+Strings:
+    in c, a string is actually char *
+
+Malloc:
+    stands for memory allocate
+    takes one argument: the amount of space to allocate (in this case its the length of s)
+    for:
+        #include <cs50.h>
+        #include <ctype.h>
+        #include <stdio.h>
+        #include <stdlib.h>
+        #include <string.h>
+
+        int main(void)
+        {
+            // Get a string
+            char *s = get_string("s: ");
+
+            // Allocate memory for another string
+            char *t = malloc(strlen(s) + 1);
+
+            // Copy string into memory, including '\0'
+            for (int i = 0, n = strlen(s); i <= n; i++)
+            {
+                t[i] = s[i];
+            }
+
+            // Capitalize copy
+            t[0] = toupper(t[0]);
+
+            // Print strings
+            printf("s: %s\n", s);
+            printf("t: %s\n", t);
+        }
+        // Free memory
+        free(t);
+        return 0;
+    To copy the value of t in a new location
+
+Free:
+    Opposite of malloc.. frees mem
+
+Null:
+    The address '0'. Error.
+
+Valgrind:
+    a debugger for malloc
+    valgrind ./program
+
+Swap:
+    You need a, b, temp
+
+    for:
+        #include <stdio.h>
+
+        void swap(int *a, int *b);
+
+        int main(void)
+        {
+            int x = 1;
+            int y = 2;
+
+            printf("x is %i, y is %i\n", x, y);
+            swap(&x, &y);
+            printf("x is %i, y is %i\n", x, y);
+        }
+
+        void swap(int *a, int *b)
+        {
+            int tmp = *a;
+            *a = *b;
+            *b = tmp;
+        }
+
+Heap/Stack:
+    types of memory.. can "overflow"
+
+Scanf:
+    In place of the get_ functions.. scanf
+    reads input from user
+
+    int:
+        int x;
+        printf("x: ");
+        scanf("%i", &x);
+        printf("x: %i\n", x);
+
+    //strings are different because a string is the address of its first byte.. so no & needed
+    str:
+        char s[4];
+        printf("s: ");
+        scanf("%s", s);
+        printf("s: %s\n", s);
+
+fprintf:
+    writes to a file
+
+File i/o:
+    for creating files
+        #include <cs50.h>
+        #include <stdio.h>
+        #include <string.h>
+
+        int main(void)
+        {
+            // Open CSV file
+            FILE *file = fopen("phonebook.csv", "a");
+            if (!file)
+            {
+                return 1;
+            }
+
+            // Get name and number
+            char *name = get_string("Name: ");
+            char *number = get_string("Number: ");
+
+            // Print to file
+            fprintf(file, "%s,%s\n", name, number);
+
+            // Close file
+            fclose(file);
+        }
+
+    for copying files
+        #include <stdio.h>
+        #include <stdint.h>
+
+        //changing C's name for byte to BYTE
+        typdef uint8_t BYTE;
+
+        int main(int argc, char *argv[])
+        {
+            FILE *src = fopen(argv[1], "rb");
+            FILE *dst = fopen(argv[2], "wb");
+
+            BYTE b;
+
+            //While there is stuff to read... write. fread says if theres "1" byte there. If theres 0, it stops.
+            while (fread(&b, sizeof(b), 1, src) !=0)
+            {
+                fwrite(&b, sizeof(b), 1, dst);
+            }
+
+            fclose(dst);
+            fclose(src);
+        }
+
