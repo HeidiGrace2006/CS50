@@ -1,0 +1,19 @@
+BaseException
+ +-- KeyboardInterrupt
+ +-- Exception
+      +-- ArithmeticError
+      |    +-- ZeroDivisionError
+      +-- AssertionError
+      +-- AttributeError
+      +-- EOFError
+      +-- ImportError
+      |    +-- ModuleNotFoundError
+      +-- LookupError
+      |    +-- KeyError
+      +-- NameError
+      +-- SyntaxError
+      |    +-- IndentationError
+      +-- ValueError
+
+ #Errors and their parents are shown above
+ #If you dont know a specific error to raise, you can raise one higher up to catch a few

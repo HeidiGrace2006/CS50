@@ -1,0 +1,1 @@
+#simply having this file in this folder allows you to run the whole folder as a "testing package"
