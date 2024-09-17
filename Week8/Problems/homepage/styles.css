@@ -1,0 +1,44 @@
+body {
+    background-color: #395563;
+    color: #212529;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.header {
+    color: white;
+    font-family: Monospace;
+    padding: 10px 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    margin-right: 70px;
+
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.bodies {
+    color: white;
+    font-size: 50px;
+    font-family: Garamond;
+    text-align: center;
+    margin: 50px;
+}
+

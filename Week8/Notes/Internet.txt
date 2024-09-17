@@ -1,0 +1,22 @@
+Internet goes through routers.. each labled TCP/IP
+    IP: Internet Protocol. (An address for packets). #.#.#.# (IP v.4)
+    TCP: Sequence numbers for packets. Garuntees delivery
+        Ports: ex: HTTP (80) HTTPS 443
+
+DNS: Domain Name Servers
+    Finds IP of Domain Names
+
+DHCP: Answers what DNS server and router you should use
+
+Status Codes:
+    200 OK
+    301 Moved Permanently
+    302 Found
+    304 Not Modified
+    304 Temporary Redirect
+    401 Unauthorized
+    403 Forbidden
+    404 Not Found
+    418 I'm a Teapot
+    500 Internal Server Error
+    503 Service Unavailable

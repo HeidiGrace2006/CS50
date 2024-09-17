@@ -1,0 +1,90 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~HTML
+* Elements: A page is made up of nested HTML **elements**.
+* Attributes: Attributes go inside element opening tags, and give more details about those elements.
+* DOM: Document object modal. How all the elements relate to each other
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CSS
+If not wanting to have css file... but <style> tags in header and style whole elements/attributes
+
+color: the color of text
+text-align: where elements are placed on the page
+background-color: can be set to any color
+width: in pixels or percent of a page
+height: in pixels or percent of a page
+padding: how much space should be left inside an element
+margin: how much space should be left outside an element
+font-family: type of font for text on page
+font-size: in pixels
+border: size type (solid, dashed, etc) color
+
+Select by element id by using # in <style>
+
+priority in styling in CSS:
+1. In-line styling
+2. id
+3. class
+4. element type
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Responsive Design
+FOR PC & MOBILE: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+use media queries (@media) if you want to be more specific ab styling for different device types
+
+Use flexbox so that elements move around on a page to fit the size dynamically. Example:
+display: flex;
+flex-wrap: wrap;
+
+can also use grid and auto
+
+Bootstrap stuff is already mobile responsive/flexible
+can also specify large or small screen with bootstrap (<div class="col-lg-3 col-sm-6">)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Sass
+Sass: Syntactically Awesome Style Sheets. Basically an extension of CSS. SCSS.
+Not understood by browsers as default though. Need to compile
+
+variables to minimize repition. Start with a $. Example:
+$color: red;
+
+ul {
+    font-size: 14px;
+    color: $color;
+}
+
+ol {
+    font-size: 18px;
+    color: $color;
+}
+
+
+
+To compile scss into css: sass variables.scss:variables.css
+For it to do it on auto: sass --watch variables.scss:variables.css
+
+
+
+inheritance: Basically things all taking on the same attributes, but also having unique attributes. Example:
+%message {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+}
+
+.success {
+    @extend %message;
+    background-color: green;
+}
+
+.warning {
+    @extend %message;
+    background-color: orange;
+}
+
+.error {
+    @extend %message;
+    background-color: red;
+}

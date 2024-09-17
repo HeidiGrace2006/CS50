@@ -1,0 +1,28 @@
+Going from static to dynamic websites
+
+{{ placeholder }}
+
+Use layout.html to keep some things the same over all of your pages
+    {% block body %}{% endblock %}
+
+With "get":
+    request.args
+    retrieves data
+    used in urls
+    search results
+    for "world" as default use:
+        (python) name = request.args.get("name", "world")
+        (html) hello, {{ name }}
+
+With "post":
+    request.form
+    submit data
+    handles larger data
+    secure data
+    Use:
+        (python) return render_template("greet.html", name=request.form.get("name"))
+        (html) hello, {% if name %}{{ name }}{% else %}world{% endif %}
+
+In HTML 'select' is keyword for dropdown menus
+
+

@@ -1,0 +1,22 @@
+HTML tags:
+    <p>
+    <hr>
+    <br>
+    <button>
+    <a>
+    <img src>
+    <input>
+    <i>
+    <small>
+    <strong>
+
+CSS properties:
+    color
+    margin
+    font-size
+    font-family
+    text-align
+
+Use of bootstrap:
+    I used bootstraps light button, as well as their implementation of javascript 'toasts' (the popup on the homepage).
+
